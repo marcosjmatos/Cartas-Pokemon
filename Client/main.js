@@ -1,3 +1,4 @@
+// const {env} = require('../Server/app')
 // aqui el front end interactua con el backend a traves de los diferentes metodos document, window
 let pkmnFound = [];
 
@@ -36,6 +37,7 @@ async function leePokemon(name) {
 function createImg(url) {
     const img = document.createElement("img")
     img.setAttribute("src",url);
+    img.setAttribute("id","pokm");
     docFrag.appendChild(img)
 }
 

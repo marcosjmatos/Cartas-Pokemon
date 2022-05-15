@@ -1,6 +1,6 @@
 // aqui se monta el server
 const http = require('http')
-const app = require("./app")
+const {app} = require("./app")
 
 // const {buscaPokemon, leePokemon} = require('../Server/src/models-controllers-routes/pokemon.model')
 

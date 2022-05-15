@@ -5,6 +5,8 @@ const cors = require('cors')
 const path = require('path');
 const app = express();
 
+const env = require('dotenv').config({path:'../.env'})
+
 
 app.use(cors({
     origin: 'http://localhost:3000',
@@ -19,4 +21,4 @@ app.get("/",(req,res)=>{
 // app.use("/data",(req,res)=>{
 //     res.sendFile(path.join(__dirname, "data", "pokemon-tcg-data","cards","en","base1.json"))
 // })
-module.exports = app
+module.exports = {app, env}
