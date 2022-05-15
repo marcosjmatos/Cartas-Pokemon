@@ -45,7 +45,6 @@ function creaDivHijo(){
     const newDiv = document.createElement("div")
     newDiv.setAttribute("class","hijo")
     fotoPkmn.appendChild(newDiv)
-    console.log(newDiv);  
     
 }
 
@@ -73,7 +72,6 @@ pkmnForm.addEventListener("submit",async (e)=>{
         createImg(img)
     }
     
-    console.log(fotoPkmnNew);
     fotoPkmnNew.appendChild(docFrag)
 }
 )
