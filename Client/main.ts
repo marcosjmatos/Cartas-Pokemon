@@ -13,7 +13,7 @@ const fotoPkmn = document.getElementById("pokemondiv")
 
 //brings the array of all Pkmn TCG
 
-async function leePokemon(name) {
+async function leePokemon(name: string) {
     try {
         const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:${name}`,{
             headers:{
@@ -34,7 +34,7 @@ async function leePokemon(name) {
 
 
 
-function createImg(url) {
+function createImg(url: any) {
     const img = document.createElement("img")
     img.setAttribute("src",url);
     img.setAttribute("id","pokm");
@@ -44,16 +44,16 @@ function createImg(url) {
 function creaDivHijo(){
     const newDiv = document.createElement("div")
     newDiv.setAttribute("class","hijo")
-    fotoPkmn.appendChild(newDiv)
+    fotoPkmn!.appendChild(newDiv)
     
 }
 
 
-pkmnForm.addEventListener("submit",async (e)=>{
+pkmnForm!.addEventListener("submit",async (e)=>{
     e.preventDefault()
-    const pkmnName = document.querySelector("#pokemon_name").value
+    const pkmnName = (<HTMLInputElement>document.getElementById("pokemon_name"))!.value
     const {data:pkmnList} = await leePokemon(pkmnName.toLowerCase());
-    const pkmnImg = pkmnList.map((pokemon)=>{
+    const pkmnImg = pkmnList.map((pokemon:any)=>{
         return pokemon.images.small
     });
     //verify if the pokemon exist
@@ -63,8 +63,8 @@ pkmnForm.addEventListener("submit",async (e)=>{
         return
     }
     //verifica si ya hay imagenes y las borra de ser así
-    if (fotoPkmn.hasChildNodes()){
-        fotoPkmn.removeChild(fotoPkmn.childNodes[0])
+    if (fotoPkmn!.hasChildNodes()){
+        fotoPkmn!.removeChild(fotoPkmn!.childNodes[0])
     }
     creaDivHijo()
     const fotoPkmnNew = document.querySelector(".hijo")
@@ -72,7 +72,7 @@ pkmnForm.addEventListener("submit",async (e)=>{
         createImg(img)
     }
     
-    fotoPkmnNew.appendChild(docFrag)
+    fotoPkmnNew!.appendChild(docFrag)
 }
 )
 
