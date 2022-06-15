@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// const {env} = require('../Server/app')
 // aqui el front end interactua con el backend a traves de los diferentes metodos document, window
 let pkmnFound = [];
 //take the form element and store his string value
