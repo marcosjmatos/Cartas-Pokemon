@@ -13,7 +13,7 @@ exports.app = app;
 const env = require('dotenv').config({ path: '../.env' });
 exports.env = env;
 app.use((0, cors_1.default)({
-    origin: 'http://localhost:3000',
+    origin: 'https://cartas-pokemon.herokuapp.com/',
 }));
 app.use(express_1.default.static(path_1.default.join(__dirname, "..", "client")));
 app.use(express_1.default.json());

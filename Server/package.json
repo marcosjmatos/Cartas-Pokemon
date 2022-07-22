@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "nodemon ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
+    "start": "node server.js",
     "build": "tsc -p ../tsconfig.json",
     "cluster": "pm2 start server.js -i max",
     "dev" : "ts-node server.ts"
